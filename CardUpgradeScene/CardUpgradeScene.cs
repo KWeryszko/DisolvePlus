@@ -153,7 +153,6 @@ public partial class CardUpgradeScene : Node2D
         {
             cards.Add(new BaseCard(card));
         }
-        cards = cards;
     }
     private void RemoveChildren()
     {
