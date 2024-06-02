@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://ueole3x4gi07"]
+
+[ext_resource type="Script" path="res://CardUpgradeScene/CardUpgradeScene.cs" id="1_h7gg3"]
+
+[node name="CardUpgradeScene" type="Node2D"]
+script = ExtResource("1_h7gg3")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 509.0
+offset_top = 163.0
+offset_right = 549.0
+offset_bottom = 203.0
+
+[node name="ReturnButton" type="Button" parent="."]
+offset_left = 61.0
+offset_top = 51.0
+offset_right = 143.0
+offset_bottom = 83.0
+text = "return"
+
+[node name="NextPageButton" type="Button" parent="."]
+offset_left = 649.0
+offset_top = 587.0
+offset_right = 745.0
+offset_bottom = 626.0
+text = "next page"
+
+[node name="PreviousPageButton" type="Button" parent="."]
+offset_left = 61.0
+offset_top = 581.0
+offset_right = 178.0
+offset_bottom = 623.0
+text = "previous page"
+
+[node name="CancelUpgradeButton" type="Button" parent="."]
+offset_left = 57.0
+offset_top = 52.0
+offset_right = 141.0
+offset_bottom = 84.0
+text = "Cancel"
