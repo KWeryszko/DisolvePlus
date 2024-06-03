@@ -12,7 +12,8 @@ public partial class HP2 : Node2D
     public int StartingHealth { get => startingHealth; set => startingHealth = value; }
 
     public void Damage(int damage){	currentHealth -= damage;	} //can be changed to int to return damage taken: return damage;
-	public void Heal(int heal) { //can be changed to int to return amount healed: return heal;
+	public void Heal(int heal) //can be changed to int to return amount healed: return heal;
+    { 
         if (currentHealth + heal > maxHealth) RestoreHealth();
         else Damage(-heal); 
     }

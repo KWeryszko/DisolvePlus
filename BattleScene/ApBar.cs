@@ -21,7 +21,6 @@ public partial class ApBar : ColorRect
             apBubbles[i].Position = new Vector2(10, 280- 25*i );
             apBubbles[i].Size = new Vector2(20, 20);
             
-            GD.Print("SMTH");
             AddChild(apBubbles[i]);
         }
     }

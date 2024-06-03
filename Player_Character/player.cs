@@ -20,7 +20,7 @@ public partial class player : CharacterBody2D
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 		}
 
-		//OBRACANIE
+		//turning sprite around
 		AnimatedSprite2D mysprite = GetNode<AnimatedSprite2D>("animacja_s");
 		if(direction > Vector2.Zero)
 		{
@@ -29,7 +29,6 @@ public partial class player : CharacterBody2D
 		else if(direction < Vector2.Zero){
 			mysprite.FlipH= false;	
 		}
-		//
         Velocity = velocity;
 		MoveAndSlide();
 	}

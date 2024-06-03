@@ -39,13 +39,13 @@ public partial class Attribute_Effects : Effects    //if value < 0 -> debuff val
     {
         attribute.ChangeAttributeRegeneration(value);
     }
-    private void MaxApInitialize(bool buff)        //ap robi w chuchu niebiezpieczne rzeczy
+    private void MaxApInitialize(bool buff)        
     {
         if (buff) attribute.AddBaseAttribute(value);
         else attribute.DecreaseBaseAttribute(value);
 
     }
-    private void BaseAttributeInitialize(bool buff)// str=agl=int
+    private void BaseAttributeInitialize(bool buff) // str=agl=int
     {
         if (buff) attribute.BuffAttribute(value);
         else attribute.DebuffAttribute(value);
@@ -55,7 +55,7 @@ public partial class Attribute_Effects : Effects    //if value < 0 -> debuff val
     {
         attribute.ChangeAttributeRegeneration(-value);
     }
-    private void MaxApDeath(bool buff)        //ap robi w chuchu niebiezpieczne rzeczy
+    private void MaxApDeath(bool buff)        
     {
         if (buff) attribute.DecreaseBaseAttribute(value);
         else attribute.AddBaseAttribute(value);

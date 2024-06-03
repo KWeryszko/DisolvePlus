@@ -35,7 +35,7 @@ public partial class Label_att_test : Label
         }
         if (myATT.getattributeName() =="None")
         {
-            Text = "grupa 21Inf-SP/b jest gnebiona przez uz i spolecznosc miedzynarodowa ma to gdzies";
+            Text = "no attack";
         }
     }
     string str;

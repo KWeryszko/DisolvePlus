@@ -64,12 +64,10 @@ public partial class HP_Effects : Effects
     public override void TurnBeginAction()
     {
         EffectTypeFunction(true);
-        //funkcja flag=1
     }
     public override void TurnEndAction()
     {
         EffectTypeFunction(false);
-        //funkcja flag =0
     }
 
     private int valueDecrease;

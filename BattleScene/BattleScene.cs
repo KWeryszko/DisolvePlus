@@ -37,7 +37,7 @@ public partial class BattleScene : Node2D
         apBar = GetChild<Control>(0).GetChild<ApBar>(1);
         apBar.MaxAPSetup(player.GetChild<Attribute>(6).getbaseAttribute());
         apBar.setRegenAp(player.GetChild<Attribute>(6).getattributeregeneration());
-        apBar.setCurrentAp(player.GetChild<Attribute>(6).getbaseAttribute()); //does it need to be here?
+        apBar.setCurrentAp(player.GetChild<Attribute>(6).getbaseAttribute());
         
 
         turnStart = true;
@@ -68,7 +68,6 @@ public partial class BattleScene : Node2D
             turnEnd = false;
             turnStart = true;
         };//Waits until player is able to read text on the card played by enemy
-        //jezeli nacisniemy guzik konczy sie tura, wszystkie karty ida do DSP
 
     }
     private void EnemyTurn()
@@ -82,10 +81,10 @@ public partial class BattleScene : Node2D
             +(int)(temp.Stats.AttackValue * temp.Stats.IntelligenceScaling * enemy.getAttributes()[2]);
         cardInUse.UpdateVisibleStats(damage);
         cardInUse.SetGlobalPosition(new Vector2((1152 / 2) - 50, 100));
-        NTB.Visible=false;       
+        NTB.Visible=false;
 
-        
-        turnCounter.AddToCounter(); //maybe moove to if(turnstart)
+
+        turnCounter.AddToCounter();
         enemyTurn = false;
         turnEnd= true;
     }
@@ -97,7 +96,7 @@ public partial class BattleScene : Node2D
             discardPile.AddCard(hand.TransferCard(hand.getCards().Count - 1));
         }
         hand.EnableButtons();
-        enemyTurn = true; //moves on to enemy turn    
+        enemyTurn = true;
     }
     public bool setCardInUse(BaseCard cardInUse)
     {
@@ -110,7 +109,7 @@ public partial class BattleScene : Node2D
         RCB.Visible = true; //sets the return button to visible so it can be clicked\\
         NTB.Visible = false;
         EB.Visible = true;
-        //savings buttons to buffer and turning them off\\
+        //savings buttons to buffer and turns them off\\
         handButtonBuffer=hand.getCurrentActiveButtons();
         hand.DisableButtons();
         return true;
@@ -136,7 +135,7 @@ public partial class BattleScene : Node2D
     }
     private void ChooseEnemy()
     {
-        enemy.ReceiveCardPlayedByOpponet(cardInUse, new int[] {1,0,0});//placeholder
+        enemy.ReceiveCardPlayedByOpponet(cardInUse, new int[] {1,0,0});//placeholder stats
         player.GetChild<Attribute>(6).DebuffAttribute(cardInUse.Stats.ApCost);
         apBar.setCurrentAp(player.GetChild<Attribute>(6).getcurrentAttribute());
         discardPile.AddCard(cardInUse);
@@ -151,7 +150,7 @@ public partial class BattleScene : Node2D
     }
     private void DrawCards()
     {
-        for (int i = 0; i < 5; i++)         //nie zakladamy ze gracz bedzie mial mniej niz 5 kart
+        for (int i = 0; i < 5; i++)         //player can't have less than 5 cards
         {
             if (!drawPile.IsEmpty())
             {
@@ -170,12 +169,12 @@ public partial class BattleScene : Node2D
     }
     public void DeathsignalReceiverPlayer()
     {
-        GD.Print("Zostalo mi odebrane jedyne co dla mnie istotne");
+        GD.Print("Player Died");
         GetTree().ChangeSceneToFile("res://GameOverScene/GameOverScene.tscn");
     }
     public void DeathsignalReceiverEnemy()
     {
-        GD.Print("Zostalo mi odebrane jedyne co dla mnie istotne");
+        GD.Print("Enemy Died");
         GetTree().ChangeSceneToFile("res://BattleVictory/BattleVictory.tscn");
     }
 

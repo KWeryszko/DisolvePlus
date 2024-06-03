@@ -24,7 +24,7 @@ public partial class BattleVictory : Node2D
         }
         tempList[save.Cards.Length] = 1;
         save.Cards = tempList;
-        //ResourceSaver.Save(save, "res://Saves/save1.tres"); //with save, changes are permament
+        //ResourceSaver.Save(save, "res://Saves/save1.tres"); //with save, changes are permanent
         
 
     }

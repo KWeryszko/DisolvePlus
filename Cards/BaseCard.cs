@@ -1,4 +1,5 @@
  using Godot;
+using System;
 using System.IO;
 
 
@@ -14,14 +15,14 @@ public partial class BaseCard : Node2D
         this.id = id;
         if (!Stats.ID.Equals(id))
         {
-            Stats = GD.Load<CardResource>("res://Cards/" + id.ToString() + ".tres");//path to resource, how to get it to always work? 
+            Stats = GD.Load<CardResource>("res://Cards/" + id.ToString() + ".tres");//path to resource
         }
     }
     public override void _Ready()
     {
         if (!Stats.ID.Equals(id))
         {
-            Stats = GD.Load<CardResource>("res://Cards/" + id.ToString() + ".tres");//path to resource, how to get it to always work? 
+            Stats = GD.Load<CardResource>("res://Cards/" + id.ToString() + ".tres");//path to resource
         }
         if (debug)
         {
@@ -45,7 +46,7 @@ public partial class BaseCard : Node2D
         graphicsControl.GetChild<TextureRect>(1).Texture = ResourceLoader.Load<Texture2D>("Cards/Resources/CardNameImg.png");
         graphicsControl.GetChild<TextureRect>(1).ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize;
         graphicsControl.GetChild<TextureRect>(1).Size = new Vector2(100, 40);
-        graphicsControl.GetChild<TextureRect>(1).Position = new Vector2(0, 100); //where the name is on the card
+        graphicsControl.GetChild<TextureRect>(1).Position = new Vector2(0, 100);    //sets the name position on the card
         graphicsControl.GetChild<TextureRect>(1).AddChild(new Label());
         graphicsControl.GetChild<TextureRect>(1).GetChild<Label>(0).Text = Stats.Name;
         graphicsControl.GetChild<TextureRect>(1).GetChild<Label>(0).Position = new Vector2(0, 10);
@@ -82,7 +83,7 @@ public partial class BaseCard : Node2D
     }
     public void SetGlobalPosition(Vector2 position) { globalPosition = position; }
     public Vector2 GetGlobalPosition() { return globalPosition; }
-    public void CreateTexture() { }//
+    public void CreateTexture() { throw new NotImplementedException("Method not implemented"); } 
     private int id=0;
     private bool debug = false;
     private TextureRect sprite = new();

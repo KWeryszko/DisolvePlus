@@ -4,7 +4,7 @@ using System;
 public partial class CardButton : Button
 {
     [Signal]
-    public delegate void OnButtonPressedEventHandler(int parentCardIndex); //not in use maybe
+    public delegate void OnButtonPressedEventHandler(int parentCardIndex);
     public override void _Pressed()
     {
         base._Pressed();
@@ -13,7 +13,7 @@ public partial class CardButton : Button
     
     public override void _Ready()
     {
-        Size = new Vector2(100, 150); //ustawic rozmiar karty
+        Size = new Vector2(100, 150); //sets card size
     }
     public override void _Draw()
     {

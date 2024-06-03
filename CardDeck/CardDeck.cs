@@ -12,19 +12,19 @@ public partial class CardDeck : Node2D
     {
         foreach (var id in cardIDs)
         {
-            cards.Add(new BaseCard(id)); //or use AddCard function
+            cards.Add(new BaseCard(id));
         }
     }
     public CardDeck(BaseCard[] cards)
     {
         foreach (var card in cards)
         {
-            this.cards.Add(card); //or use AddCard function
+            this.cards.Add(card);
         }
     }
     public override void _Ready()
     {
-        //Creates buttons and connects signals\\
+        //Creates buttons and connects signals\\  //temporary solution
         funkcje.Add(Card1ButtonHoverStart);
         funkcje.Add(Card2ButtonHoverStart);
         funkcje.Add(Card3ButtonHoverStart);
@@ -42,13 +42,12 @@ public partial class CardDeck : Node2D
             buttons[i].MouseEntered += funkcje[i];
             buttons[i].MouseExited += funkcje[5+i];  
             buttons[i].Flat = true;
-        }//flat truns off shade of button
+        }
         funkcje.Clear();
     }
     public void AddCardById(int id)
     {
         cards.Add(new BaseCard(id));
-        if (debug) { GD.Print("dodano karte"); }
     }
     public void AddCard(BaseCard card)
     {
@@ -65,7 +64,6 @@ public partial class CardDeck : Node2D
             
             GD.Print("IndexOutOfRange");
         }
-        if (debug) { GD.Print("usunieto karte"); }
     }
     public void ChooseCardUpgrade(int upgradeableCardIndex)
     {
@@ -78,7 +76,7 @@ public partial class CardDeck : Node2D
         UpgradeCard(upgradeableCardIndex, upgradeID);
         //input function? ex. Create a new list of Cards consisting of possible upgrades and show them to the player once upgrade is chosen the card updates to it
     }
-    public int ShowCards(List<BaseCard> cards, int verticalOffset = 0) //return index number of chosen card // now with temporary code! // VO - number of pixels from the bottom
+    public int ShowCards(List<BaseCard> cards, int verticalOffset = 0) //return index number of chosen card // VO - number of pixels from the bottom
     {
         int verticalPosition = 648 - 150 - verticalOffset;
         List<Vector2> positions = new List<Vector2>(0);
@@ -135,7 +133,7 @@ public partial class CardDeck : Node2D
 
         return 0;
     }
-    public void Card1ButtonHoverStart() { CardButtonHoverStart(0); }//maybe it can be done better, but i don't know how :( (it could XD)
+    public void Card1ButtonHoverStart() { CardButtonHoverStart(0); }//temporary solution, find a way to override hover signal
     public void Card2ButtonHoverStart() { CardButtonHoverStart(1); }
     public void Card3ButtonHoverStart() { CardButtonHoverStart(2); }
     public void Card4ButtonHoverStart() { CardButtonHoverStart(3); }
@@ -157,9 +155,8 @@ public partial class CardDeck : Node2D
         {
             ShowCards(cards);
             buttons[getCards().Count].Visible = false;
-        };//sets card in the middle of the screen, if successfull removes card\\ 
+        };//sets card in the middle of the screen, if successful removes card\\ 
 
-         //turns off the button for the chosen card\\
     }
     private void CardButtonHoverStart(int indx)
     { 
@@ -239,7 +236,7 @@ public partial class CardDeck : Node2D
             RemoveChild(GetNode(path)); 
         }   
     }
-    public int[] getCurrentActiveButtons() //works a bit weirdly
+    public int[] getCurrentActiveButtons() //check how it actually works
     {
         List<int> activeButtons= new(0);
         for (int i = 0; i < cards.Count; i++)
@@ -273,7 +270,6 @@ public partial class CardDeck : Node2D
     private List<BaseCard> cards=new(0);
     List<CardButton> buttons = new List<CardButton>(0);
     List<Action> funkcje=new List<Action>(0);
-    private bool debug = true;
     private string[] childPaths;
     private int lastButton;
 }

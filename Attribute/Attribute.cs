@@ -57,7 +57,7 @@ public partial class Attribute : Node2D
     private int baseAttribute;
     private int startingAttribute=1;
     private int attributeRegeneration = 0;  //used to add atribute points at the start of a turn
-    private int overflow = 0;               //dodatkowa zmienna zapisujaca na minusie
+    private int overflow = 0;              
     private AttributeNames attributeName;
     public enum AttributeNames
     {

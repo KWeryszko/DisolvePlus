@@ -8,7 +8,8 @@ public partial class EnemyButton : Button
 
     public override void _Ready()
     {
-        Size = new Vector2(100, 200); //ustawic rozmiar przycisku
+        Size = new Vector2(100, 200); //sets button size
+        Flat = true;                  
     }
     public override void _Draw()
     {

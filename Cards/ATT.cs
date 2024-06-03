@@ -5,8 +5,8 @@ public partial class ATT : Label
 {
     public override void _Ready()
     {
-        bc = GetNode<BaseCard>(GetPathTo(GetParent().GetParent().GetParent()));
-        string str = bc.Stats.AttackValue.ToString();
+        baseCard = GetNode<BaseCard>(GetPathTo(GetParent().GetParent().GetParent()));
+        string str = baseCard.Stats.AttackValue.ToString();
         Text = str;
     }
     public override void _Process(double delta)
@@ -15,8 +15,8 @@ public partial class ATT : Label
     }
     public void Update()
     {
-        string str = bc.Stats.AttackValue.ToString();
+        string str = baseCard.Stats.AttackValue.ToString();
         Text = str;
     }
-    BaseCard bc;
+    BaseCard baseCard;
 }

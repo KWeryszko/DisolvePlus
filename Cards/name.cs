@@ -5,8 +5,8 @@ public partial class name : Label
 {
     public override void _Ready()
     {
-        bc = GetNode<BaseCard>(GetPathTo(GetParent().GetParent().GetParent()));
-        string str = bc.Stats.Name;
+        baseCard = GetNode<BaseCard>(GetPathTo(GetParent().GetParent().GetParent()));
+        string str = baseCard.Stats.Name;
         Text = str;
     }
     public override void _Process(double delta)
@@ -15,8 +15,8 @@ public partial class name : Label
     }
     public void Update()
     {
-        string str = bc.Stats.Name;
+        string str = baseCard.Stats.Name;
         Text = str;
     }
-    BaseCard bc;
+    BaseCard baseCard;
 }

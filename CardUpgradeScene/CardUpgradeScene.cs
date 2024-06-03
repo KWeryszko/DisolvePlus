@@ -67,7 +67,7 @@ public partial class CardUpgradeScene : Node2D
                 positionBuffer[0] = 80;
                 positionBuffer[1] += 200;
             }
-            buttons[i].OnButtonPressed += OnCardButtonPressed; //connecting functions, can be moved
+            buttons[i].OnButtonPressed += OnCardButtonPressed; //connecting functions, can be moved to separate method
         }
 
         ResetPositionBuffer();
@@ -111,7 +111,7 @@ public partial class CardUpgradeScene : Node2D
             AddChild(tempCardList[i]);
             tempButtonList.Add(new CardButton());
             tempCardList[i].AddChild(tempButtonList[i]);
-            tempButtonList[i].setParentCardIndex(tempCardList[i].ID);//scuffed
+            tempButtonList[i].setParentCardIndex(tempCardList[i].ID);
             tempButtonList[i].OnButtonPressed += UpgradeCard;
         }
         if (tempCardList.Count==1) 
@@ -137,15 +137,6 @@ public partial class CardUpgradeScene : Node2D
         }
         AddChild(cards[parentCardIndex]);
         cards[parentCardIndex].SetGlobalPosition(new Vector2(200, 300));
-
-        //show card to be upgraded and upgrade options
-        // [] [] []             <- upgrade options
-        //    []                <- card to be upgraded
-        //upgrade options should have buttons so they can be chose
-        //add return/cancel button
-        //previousPageButton.Visible = true;
-        //nextPageButton.Visible = true;
-        //displayCards();
     }
     private void ImportCards()
     {
@@ -168,9 +159,10 @@ public partial class CardUpgradeScene : Node2D
     }
     private void UpgradeCard(int parentCardIndex)
     {
-        RemoveChild(cards[chosenCard]);   //necessery                      
+        RemoveChild(cards[chosenCard]);                        
         cards[chosenCard] = new BaseCard(parentCardIndex);
-        //zapis kart do pliku\\
+
+        //saving upgraded card to save file\\
         int[] tempArray=new int[cards.Count];
         for (int i = 0; i < cards.Count; i++)
         {

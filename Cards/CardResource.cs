@@ -36,10 +36,10 @@ public partial class CardResource : Resource
     public int[] SpecialEffectsValue { get => specialEffectsValue; set => specialEffectsValue = value; }
     [Export]
     public int[] SpecialEffectsLife { get => specialEffectsLife; set => specialEffectsLife = value; }
-    //id , attVal, armVal, healVal, apCost, name, aglSc, strSc, intSc, nxtC, SpEfID, SpEfVal, SpEfLfe
-    public CardResource() : this(0, 0, 0, 0, 0, null, 0, 0, 0, null, null, null, null) { }
     [Export]
     public string SpritePath { get => spritePath; set => spritePath = value; }
+    //id , attVal, armVal, healVal, apCost, name, aglSc, strSc, intSc, nxtC, SpEfID, SpEfVal, SpEfLfe
+    public CardResource() : this(0, 0, 0, 0, 0, null, 0, 0, 0, null, null, null, null) { }
     public CardResource(int id, int attackValue, int armourValue, int healValue, int apCost, string name, double agilityScaling, double strengthScaling, double intelligenceScaling, int[] nextCardsID, int[] specialEffectsID, int[] specialEffectsValue, int[] specialEffectsLife)
     {
         ID = id;

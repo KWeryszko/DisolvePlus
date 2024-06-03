@@ -56,23 +56,23 @@ public abstract partial class BaseEnemy : Node2D //Base class for all enemies
             switch (effectId)
             {
 
-                case 0: //REGEN ignores armour and deals negative damage xd // change Effects to accept Nodepath insted of string   
+                case 0: //REGEN ignores armour and deals negative damage // change Effects to accept Nodepath insted of string   
                     effects.Add(new HP_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 1,paths));
                     break;
-                case 1: //Poison Alice Cooper reference?
+                case 1: //Poison
                     effects.Add(new HP_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 2, paths));
                     break;
-                case 2: //Burn - deep purple
+                case 2: //Burn
                     effects.Add(new HP_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 3, paths));
                     break;
-                case 3: //bleed - i don't know
+                case 3: //bleed
                     effects.Add(new HP_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 4, paths));
                     break;
                 case 4: //ApRegen (stun / haste)
                     paths[0] = GetPathTo(actionPoints);
                     effects.Add(new Attribute_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 1, paths));
                     break;
-                //case 5: //MaxAP
+                //case 5: //MaxAP //can only be used on player
                 // paths[0] = GetPathTo(Ap);
                 //effects.Add(new Attribute_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 2, paths))
                 case 6: //strength
@@ -95,7 +95,7 @@ public abstract partial class BaseEnemy : Node2D //Base class for all enemies
 
     }
 
-    public void ReceiveCardPlayedByOpponet(int cardID, int[] playerStats = null)    { ReceiveCardPlayedByOpponet(new BaseCard(cardID), playerStats);    }// it just works!
+    public void ReceiveCardPlayedByOpponet(int cardID, int[] playerStats = null)    { ReceiveCardPlayedByOpponet(new BaseCard(cardID), playerStats);    }
 
     protected void SetHpBar()
     {
@@ -115,7 +115,7 @@ public abstract partial class BaseEnemy : Node2D //Base class for all enemies
         
 
         hpBar.GetChild<Label>(0).Text = "HP: " + getCurrentHP() + "/" + getMaxHP();
-        sprite.Position = new Vector2(80, 120);//sets sprite under hp bar or smth
+        sprite.Position = new Vector2(80, 120);//sets sprite under hp bar
     }
     public void UpdateHpBar() { hpBar.Value = getCurrentHP(); hpBar.GetChild<Label>(0).Text = "HP: " + getCurrentHP() + "/" + getMaxHP(); }
     protected void ConnectAttributesToChildren()
@@ -138,7 +138,7 @@ public abstract partial class BaseEnemy : Node2D //Base class for all enemies
         intelligence = new();
         actionPoints = new();
     }
-    public int getCurrentHP()//unnecesery if we create label locally
+    public int getCurrentHP()
     {
         return hp.getcurrentHealth();
     }
