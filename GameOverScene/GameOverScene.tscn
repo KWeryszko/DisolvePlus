@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfcgpwsqomw"]
+[gd_scene load_steps=3 format=3 uid="uid://bfcgpwsqomw"]
 
 [ext_resource type="StyleBox" uid="uid://cisr6t18ulgwu" path="res://GameOverScene/Resources/GameOverLabel.tres" id="1_1pmwi"]
+[ext_resource type="Script" path="res://GameOverScene/GameOverScene.cs" id="1_14dfu"]
 
 [node name="GameOverScene" type="Node2D"]
+script = ExtResource("1_14dfu")
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 3

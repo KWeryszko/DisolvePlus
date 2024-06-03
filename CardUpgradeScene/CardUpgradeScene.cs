@@ -25,6 +25,14 @@ public partial class CardUpgradeScene : Node2D
         SetButtonsPositions();
         displayCards();
     }
+    public override void _Process(double delta)
+    {
+        if (Input.IsActionJustPressed("LeftMouseClick") && upgradePicked)
+        {
+            upgradePicked = false;
+            GetTree().ChangeSceneToFile("res://BattleVictory/BattleVictory.tscn");
+        }
+    }
     private void displayCards()
     {
         for (int i = 10 * currentPage; i < cards.Count && i < 10 * (currentPage + 1); i++)
@@ -159,18 +167,26 @@ public partial class CardUpgradeScene : Node2D
     }
     private void UpgradeCard(int parentCardIndex)
     {
-        RemoveChild(cards[chosenCard]);                        
-        cards[chosenCard] = new BaseCard(parentCardIndex);
-
-        //saving upgraded card to save file\\
-        int[] tempArray=new int[cards.Count];
-        for (int i = 0; i < cards.Count; i++)
+        //removes all cards and buttons from screen\\
+        for (int i = 0; i < tempCardList.Count; i++)
         {
-            tempArray[i] = cards[i].ID;
+            RemoveChild(tempCardList[i]);
+            tempCardList[i].RemoveChild(tempButtonList[i]);
         }
-        save.Cards = tempArray;
-        GetTree().ChangeSceneToFile("res://BattleVictory/BattleVictory.tscn");
+        RemoveChild(cards[chosenCard]);
+        GetChild<Button>(4).Visible = false;
 
+        //sets upgraded card and its upgrade on screen\\
+        cards[chosenCard].SetGlobalPosition(new Vector2(200, 200));
+        AddChild(cards[chosenCard]);
+        BaseCard tempCard = new(parentCardIndex);
+        tempCard.SetGlobalPosition(new Vector2(400, 200));
+        AddChild(tempCard);
+        
+        //saving upgraded card to save file\\
+        save.Cards[chosenCard] = parentCardIndex;
+
+        upgradePicked = true;
     }
     private void CancelUpgrade()
     {
@@ -201,7 +217,8 @@ public partial class CardUpgradeScene : Node2D
     private Vector2 positionBuffer = new Vector2(80,200);
     private int currentPage , chosenCard;
     private Button previousPageButton, nextPageButton, cancelUpgradeButton;
-    List<BaseCard> tempCardList;
-    List<CardButton> tempButtonList;
+    private bool upgradePicked = false;
+    private List<BaseCard> tempCardList;
+    private List<CardButton> tempButtonList;
     private SaveFileResource save = GD.Load<SaveFileResource>("res://Saves/save1.tres");
 }

@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_i5mj3")
-Cards = PackedInt32Array(2, 2, 2, 2, 2)
+Cards = PackedInt32Array(1, 2, 2, 2, 2)
 Upgrade = false

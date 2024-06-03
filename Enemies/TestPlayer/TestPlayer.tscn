@@ -66,7 +66,6 @@ sprite_frames = SubResource("SpriteFrames_rfkmu")
 frame_progress = 0.640515
 
 [node name="Hp2" parent="." instance=ExtResource("13_4ehqv")]
-StartingHealth = 300
 
 [node name="Armour" parent="." instance=ExtResource("14_u7mom")]
 
