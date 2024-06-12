@@ -144,7 +144,7 @@ frame = 7
 frame_progress = 0.373865
 
 [node name="Hp2" parent="." instance=ExtResource("31_5810a")]
-StartingHealth = 20
+StartingHealth = 5
 
 [node name="Armour" parent="." instance=ExtResource("32_nve13")]
 

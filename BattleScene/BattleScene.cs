@@ -12,6 +12,7 @@ public partial class BattleScene : Node2D
         {
             drawPile.AddCardById(card);
         }
+        
 
         hand = GetChild<CardDeck>(2);
         discardPile = GetChild<CardDeck>(3);
@@ -38,7 +39,6 @@ public partial class BattleScene : Node2D
         apBar.MaxAPSetup(player.GetChild<Attribute>(6).getbaseAttribute());
         apBar.setRegenAp(player.GetChild<Attribute>(6).getattributeregeneration());
         apBar.setCurrentAp(player.GetChild<Attribute>(6).getbaseAttribute());
-        
 
         turnStart = true;
         turnCounter.AddToCounter();
@@ -51,6 +51,7 @@ public partial class BattleScene : Node2D
         {
             DrawCards();
             hand.ShowCards(hand.getCards());
+            hand.UpdateCardsBasedOnStats(player.getAttributes());
             player.GetChild<Attribute>(6).RegenerateAttribute();
             apBar.setCurrentAp(player.GetChild<Attribute>(6).getcurrentAttribute());
             turnStart = false;
@@ -135,7 +136,7 @@ public partial class BattleScene : Node2D
     }
     private void ChooseEnemy()
     {
-        enemy.ReceiveCardPlayedByOpponet(cardInUse, new int[] {1,0,0});//placeholder stats
+        enemy.ReceiveCardPlayedByOpponet(cardInUse, player.getAttributes());//placeholder stats, not anymore!
         player.GetChild<Attribute>(6).DebuffAttribute(cardInUse.Stats.ApCost);
         apBar.setCurrentAp(player.GetChild<Attribute>(6).getcurrentAttribute());
         discardPile.AddCard(cardInUse);
@@ -175,6 +176,7 @@ public partial class BattleScene : Node2D
     public void DeathsignalReceiverEnemy()
     {
         GD.Print("Enemy Died");
+        save.Upgrade = true;
         GetTree().ChangeSceneToFile("res://BattleVictory/BattleVictory.tscn");
     }
 

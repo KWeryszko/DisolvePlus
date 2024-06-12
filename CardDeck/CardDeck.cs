@@ -202,6 +202,18 @@ public partial class CardDeck : Node2D
             cards[indx2] = temp;
         }
     }
+    public void UpdateCardsBasedOnStats(int[] stats)
+    {
+        foreach (var card in cards)
+        {
+            int damage =
+                 (int)(card.Stats.AttackValue * card.Stats.StrengthScaling * stats[0]) +
+                +(int)(card.Stats.AttackValue * card.Stats.AgilityScaling * stats[1]) +
+                +(int)(card.Stats.AttackValue * card.Stats.IntelligenceScaling * stats[2]);
+            card.UpdateVisibleStats(damage);
+        }
+        
+    }
     private void UpgradeCard(int cardIndex, int upgradedCardID)
     {
         try

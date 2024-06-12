@@ -12,6 +12,11 @@ public partial class BattleVictory : Node2D
         upgradeCardButton.ButtonUp += AddCard;
         nextBattleButton = GetChild<Button>(3);
         nextBattleButton.ButtonUp += NextBattle;
+        if (!save.Upgrade)
+        {
+            addCardButton.Disabled = true;
+            upgradeCardButton.Disabled = true;
+        }
 
     }
     private void AddCard()
@@ -24,8 +29,11 @@ public partial class BattleVictory : Node2D
         }
         tempList[save.Cards.Length] = 1;
         save.Cards = tempList;
+        save.Upgrade = false;
+        addCardButton.Disabled = true;
+        upgradeCardButton.Disabled = true;
         //ResourceSaver.Save(save, "res://Saves/save1.tres"); //with save, changes are permanent
-        
+
 
     }
     private void UpgradeCard()

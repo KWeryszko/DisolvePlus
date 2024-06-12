@@ -30,6 +30,7 @@ public partial class CardUpgradeScene : Node2D
         if (Input.IsActionJustPressed("LeftMouseClick") && upgradePicked)
         {
             upgradePicked = false;
+            save.Upgrade = false;
             GetTree().ChangeSceneToFile("res://BattleVictory/BattleVictory.tscn");
         }
     }

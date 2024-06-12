@@ -118,6 +118,7 @@ public abstract partial class BaseEnemy : Node2D //Base class for all enemies
         sprite.Position = new Vector2(80, 120);//sets sprite under hp bar
     }
     public void UpdateHpBar() { hpBar.Value = getCurrentHP(); hpBar.GetChild<Label>(0).Text = "HP: " + getCurrentHP() + "/" + getMaxHP(); }
+
     protected void ConnectAttributesToChildren()
     {
         sprite = GetChild<AnimatedSprite2D>(0);
