@@ -1,3 +1,5 @@
+AnimatedSprite2D
+Node2D
 Control
 TextureButton
 Button
@@ -7,8 +9,6 @@ VScrollBar
 TextureRect
 ColorRect
 Label
-AnimatedSprite2D
 ProgressBar
 TextureProgressBar
-Node2D
 HBoxContainer

@@ -1,0 +1,159 @@
+[gd_scene load_steps=36 format=3 uid="uid://bq5t3ffs7as4e"]
+
+[ext_resource type="Script" path="res://Enemies/RedSlime/RedSlime.cs" id="1_lv42n"]
+[ext_resource type="PackedScene" uid="uid://df4klab6xh0sj" path="res://HP2/HP2.tscn" id="2_3on2m"]
+[ext_resource type="Texture2D" uid="uid://0adxkbiyjpwe" path="res://Enemies/RedSlime/Animation/0001.png" id="2_ao54v"]
+[ext_resource type="Texture2D" uid="uid://njawavc8ylj2" path="res://Enemies/RedSlime/Animation/0002.png" id="3_4tgdo"]
+[ext_resource type="PackedScene" uid="uid://di83323lrkuve" path="res://Armour/Armour.tscn" id="3_momma"]
+[ext_resource type="Texture2D" uid="uid://5s86q6unoutv" path="res://Enemies/RedSlime/Animation/0003.png" id="4_vd00r"]
+[ext_resource type="PackedScene" uid="uid://d0rvdt1rg0ybu" path="res://Attribute/Attribute.tscn" id="4_veau2"]
+[ext_resource type="Texture2D" uid="uid://c314lgsao1vng" path="res://Enemies/RedSlime/Animation/0004.png" id="5_ox80v"]
+[ext_resource type="Texture2D" uid="uid://x82hqv0ohmqb" path="res://Enemies/RedSlime/Animation/0005.png" id="6_pyk26"]
+[ext_resource type="Texture2D" uid="uid://tjyij6vclvkj" path="res://Enemies/RedSlime/Animation/0006.png" id="7_56gj2"]
+[ext_resource type="Texture2D" uid="uid://bn1nl8ddcpeay" path="res://Enemies/RedSlime/Animation/0007.png" id="8_yhvy8"]
+[ext_resource type="Texture2D" uid="uid://bbmnruw3nvdi4" path="res://Enemies/RedSlime/Animation/0008.png" id="9_dqtpl"]
+[ext_resource type="Texture2D" uid="uid://d20hbkiugp4l4" path="res://Enemies/RedSlime/Animation/0009.png" id="10_mkqy2"]
+[ext_resource type="Texture2D" uid="uid://blh5fvlccq2i0" path="res://Enemies/RedSlime/Animation/0010.png" id="11_e5550"]
+[ext_resource type="Texture2D" uid="uid://dy62efj5fgdsq" path="res://Enemies/RedSlime/Animation/0011.png" id="12_8gfv0"]
+[ext_resource type="Texture2D" uid="uid://dq8e817kkro4j" path="res://Enemies/RedSlime/Animation/0012.png" id="13_6x74w"]
+[ext_resource type="Texture2D" uid="uid://c22hbnvhrmwf3" path="res://Enemies/RedSlime/Animation/0013.png" id="14_ppk5x"]
+[ext_resource type="Texture2D" uid="uid://dk845r33vn83o" path="res://Enemies/RedSlime/Animation/0014.png" id="15_bpqqo"]
+[ext_resource type="Texture2D" uid="uid://npj0gb6njsyk" path="res://Enemies/RedSlime/Animation/0015.png" id="16_hb8rm"]
+[ext_resource type="Texture2D" uid="uid://blavdirid0348" path="res://Enemies/RedSlime/Animation/0016.png" id="17_usq61"]
+[ext_resource type="Texture2D" uid="uid://5kde3cw3mkk2" path="res://Enemies/RedSlime/Animation/0017.png" id="18_6rwlk"]
+[ext_resource type="Texture2D" uid="uid://co4mw343fkjxg" path="res://Enemies/RedSlime/Animation/0018.png" id="19_l1b4u"]
+[ext_resource type="Texture2D" uid="uid://beqpul3ajf16s" path="res://Enemies/RedSlime/Animation/0019.png" id="20_3jspu"]
+[ext_resource type="Texture2D" uid="uid://bkofarxud3viy" path="res://Enemies/RedSlime/Animation/0020.png" id="21_kmtcv"]
+[ext_resource type="Texture2D" uid="uid://crh5tikcrkqsv" path="res://Enemies/RedSlime/Animation/0021.png" id="22_hg8pt"]
+[ext_resource type="Texture2D" uid="uid://cqr4s0g2ie3ch" path="res://Enemies/RedSlime/Animation/0022.png" id="23_vv410"]
+[ext_resource type="Texture2D" uid="uid://ds5j78crv1vsv" path="res://Enemies/RedSlime/Animation/0023.png" id="24_iifwh"]
+[ext_resource type="Texture2D" uid="uid://bov8umpblv7lm" path="res://Enemies/RedSlime/Animation/0024.png" id="25_ynve7"]
+[ext_resource type="Texture2D" uid="uid://cm74gme2wbs6a" path="res://Enemies/RedSlime/Animation/0025.png" id="26_2m8r6"]
+[ext_resource type="Texture2D" uid="uid://dkbq00ypuljfu" path="res://Enemies/RedSlime/Animation/0026.png" id="27_grl4u"]
+[ext_resource type="Texture2D" uid="uid://cgadm31u1ohns" path="res://Enemies/RedSlime/Animation/0027.png" id="28_vekgl"]
+[ext_resource type="Texture2D" uid="uid://daxixvyxljsqa" path="res://Enemies/RedSlime/Animation/0028.png" id="29_kdfpa"]
+[ext_resource type="Texture2D" uid="uid://bo3jxpoh1y4aa" path="res://Enemies/RedSlime/Animation/0029.png" id="30_b345t"]
+[ext_resource type="Texture2D" uid="uid://cj5eek3xprv0q" path="res://Enemies/RedSlime/Animation/0030.png" id="31_gmsdy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lk7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ao54v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4tgdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vd00r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ox80v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pyk26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_56gj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yhvy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dqtpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mkqy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e5550")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8gfv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6x74w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ppk5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bpqqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hb8rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_usq61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6rwlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_l1b4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3jspu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kmtcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hg8pt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vv410")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_iifwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ynve7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2m8r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_grl4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vekgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_kdfpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_b345t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_gmsdy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="RedSlime" type="Node2D"]
+script = ExtResource("1_lv42n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7lk7b")
+
+[node name="Hp2" parent="." instance=ExtResource("2_3on2m")]
+StartingHealth = 100
+
+[node name="Armour" parent="." instance=ExtResource("3_momma")]
+
+[node name="Strength" parent="." instance=ExtResource("4_veau2")]
+StartingAttribute = 3
+type = 2
+
+[node name="Agility" parent="." instance=ExtResource("4_veau2")]
+StartingAttribute = 3
+type = 1
+
+[node name="Intelligence" parent="." instance=ExtResource("4_veau2")]
+StartingAttribute = 3
+type = 3
+
+[node name="AP" parent="." instance=ExtResource("4_veau2")]

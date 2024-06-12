@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://dj5f3a373u6bi"]
+[gd_scene load_steps=3 format=3 uid="uid://dj5f3a373u6bi"]
+
+[ext_resource type="Script" path="res://Menu/Menu.cs" id="1_owpwp"]
+[ext_resource type="Texture2D" uid="uid://bb1yxxht7wh4o" path="res://Menu/Resources/Title.png" id="2_381ra"]
 
 [node name="Menu" type="Node2D"]
+script = ExtResource("1_owpwp")
+
+[node name="BackGround" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 433.0
+offset_top = 256.0
+offset_right = 683.0
+offset_bottom = 337.0
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 435.0
+offset_top = 353.0
+offset_right = 683.0
+offset_bottom = 421.0
+text = "Exit"
+
+[node name="Title" type="TextureButton" parent="."]
+offset_left = 246.0
+offset_top = 35.0
+offset_right = 858.0
+offset_bottom = 221.0
+texture_normal = ExtResource("2_381ra")
+ignore_texture_size = true
+stretch_mode = 0

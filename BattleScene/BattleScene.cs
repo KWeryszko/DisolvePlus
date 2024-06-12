@@ -26,13 +26,29 @@ public partial class BattleScene : Node2D
         EB = GetChild<EnemyButton>(7);
         EB.ButtonUp += ChooseEnemy;
         EB.Visible = false;
-        //ENEMY\\
-        enemy = GetChild<BaseEnemy>(8);
-        enemy.CharacterDied += DeathsignalReceiverEnemy;
 
         //PLAYER\\
-        player = GetChild<BaseEnemy>(9);
+        player = GetChild<BaseEnemy>(8);
         player.CharacterDied += DeathsignalReceiverPlayer;
+
+        //ENEMY\\
+        String path;
+        if (save.Round == 0)
+        {
+            path = "res://Enemies/GreenSlime/GreenSlime.tscn";
+            save.Round++;
+        }
+        else if (save.Round == 1)
+        {
+            path = "res://Enemies/BlueSlime/BlueSlime.tscn";
+            save.Round++;
+        }
+        else { path = "res://Enemies/RedSlime/RedSlime.tscn";  }
+        var scene = GD.Load<PackedScene>(path);
+        var instance = scene.Instantiate();
+        AddChild(instance);
+        enemy = GetChild<BaseEnemy>(9);
+        enemy.CharacterDied += DeathsignalReceiverEnemy;
 
         //AP Bar\\
         apBar = GetChild<Control>(0).GetChild<ApBar>(1);
