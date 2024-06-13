@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://c5ytxrbnsmc2m"]
+
+[ext_resource type="Script" path="res://Cards/CardResource.cs" id="1_ggwd5"]
+
+[resource]
+script = ExtResource("1_ggwd5")
+ID = 19
+AttackValue = 0
+ArmourValue = 0
+HealValue = 0
+ApCost = 6
+Name = "Zabójczy Intrygant"
+AgilityScaling = 0.0
+StrengthScaling = 1.8
+IntelligenceScaling = 3.5
+NextCardsID = PackedInt32Array(10, 11)
+SpecialEffectsID = PackedInt32Array()
+SpecialEffectsValue = PackedInt32Array()
+SpecialEffectsLife = PackedInt32Array()
+SpritePath = "res://Cards/CardSprites/19_Zabojczy_Intrygant.png"

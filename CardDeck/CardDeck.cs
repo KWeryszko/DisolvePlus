@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Linq;
 
 public partial class CardDeck : Node2D
 {
@@ -154,7 +155,7 @@ public partial class CardDeck : Node2D
         else
         {
             ShowCards(cards);
-            buttons[getCards().Count].Visible = false;
+            //buttons[getCards().Count].Visible = false;
         };//sets card in the middle of the screen, if successful removes card\\ 
 
     }
@@ -282,6 +283,7 @@ public partial class CardDeck : Node2D
     private List<BaseCard> cards=new(0);
     List<CardButton> buttons = new List<CardButton>(0);
     List<Action> funkcje=new List<Action>(0);
+   
     private string[] childPaths;
     private int lastButton;
 }

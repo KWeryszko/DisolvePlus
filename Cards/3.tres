@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://dopmfij8uc5rs"]
+
+[ext_resource type="Script" path="res://Cards/CardResource.cs" id="1_xjt1o"]
+
+[resource]
+script = ExtResource("1_xjt1o")
+ID = 3
+AttackValue = 10
+ArmourValue = 0
+HealValue = 2
+ApCost = 2
+Name = "Szczurzy Atak"
+AgilityScaling = 0.0
+StrengthScaling = 1.5
+IntelligenceScaling = 0.0
+NextCardsID = PackedInt32Array()
+SpecialEffectsID = PackedInt32Array()
+SpecialEffectsValue = PackedInt32Array()
+SpecialEffectsLife = PackedInt32Array()
+SpritePath = "res://Cards/CardSprites/3_Szczurzy_atak.png"

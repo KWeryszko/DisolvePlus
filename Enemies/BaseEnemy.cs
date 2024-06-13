@@ -57,15 +57,19 @@ public abstract partial class BaseEnemy : Node2D //Base class for all enemies
             {
 
                 case 0: //REGEN ignores armour and deals negative damage // change Effects to accept Nodepath insted of string   
+                    
                     effects.Add(new HP_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 1,paths));
                     break;
                 case 1: //Poison
+                    
                     effects.Add(new HP_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 2, paths));
                     break;
                 case 2: //Burn
+                   
                     effects.Add(new HP_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 3, paths));
                     break;
                 case 3: //bleed
+                    
                     effects.Add(new HP_Effects(card.Stats.SpecialEffectsLife[i], card.Stats.SpecialEffectsValue[i], 4, paths));
                     break;
                 case 4: //ApRegen (stun / haste)

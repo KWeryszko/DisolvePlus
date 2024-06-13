@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://bm0c3ujuntjc0"]
+
+[ext_resource type="Script" path="res://Cards/CardResource.cs" id="1_7y2bw"]
+
+[resource]
+script = ExtResource("1_7y2bw")
+ID = 17
+AttackValue = 0
+ArmourValue = 20
+HealValue = 0
+ApCost = 4
+Name = "Tarcza Runiczna"
+AgilityScaling = 1.8
+StrengthScaling = 0.0
+IntelligenceScaling = 0.0
+NextCardsID = PackedInt32Array()
+SpecialEffectsID = PackedInt32Array()
+SpecialEffectsValue = PackedInt32Array()
+SpecialEffectsLife = PackedInt32Array(1)
+SpritePath = "res://Cards/CardSprites/17_Tarcza_runiczna.png"

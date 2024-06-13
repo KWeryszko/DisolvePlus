@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://o1duqvwjt2cb"]
+
+[ext_resource type="Script" path="res://Cards/CardResource.cs" id="1_lho24"]
+
+[resource]
+script = ExtResource("1_lho24")
+ID = 20
+AttackValue = 35
+ArmourValue = 30
+HealValue = 0
+ApCost = 10
+Name = "Niezłomny Łowca"
+AgilityScaling = 3.5
+StrengthScaling = 0.0
+IntelligenceScaling = 0.0
+NextCardsID = PackedInt32Array(14, 15)
+SpecialEffectsID = PackedInt32Array()
+SpecialEffectsValue = PackedInt32Array()
+SpecialEffectsLife = PackedInt32Array()
+SpritePath = "res://Cards/CardSprites/20_Niezlomny_lowca.png"

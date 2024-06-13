@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://dfowty5783hi8"]
+
+[ext_resource type="Script" path="res://Cards/CardResource.cs" id="1_xjt1o"]
+
+[resource]
+script = ExtResource("1_xjt1o")
+ID = 4
+AttackValue = 0
+ArmourValue = 10
+HealValue = 0
+ApCost = 2
+Name = "Oblężnicza Obrona"
+AgilityScaling = 0.0
+StrengthScaling = 0.0
+IntelligenceScaling = 1.0
+NextCardsID = PackedInt32Array()
+SpecialEffectsID = PackedInt32Array()
+SpecialEffectsValue = PackedInt32Array()
+SpecialEffectsLife = PackedInt32Array()
+SpritePath = "res://Cards/CardSprites/4_Oblecznicza_obrona.png"

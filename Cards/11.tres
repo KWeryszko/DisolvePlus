@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://cqmjo26tpq8l1"]
+
+[ext_resource type="Script" path="res://Cards/CardResource.cs" id="1_xjt1o"]
+
+[resource]
+script = ExtResource("1_xjt1o")
+ID = 11
+AttackValue = 18
+ArmourValue = 0
+HealValue = 0
+ApCost = 5
+Name = "Trucizna Szczura"
+AgilityScaling = 1.5
+StrengthScaling = 0.0
+IntelligenceScaling = 0.0
+NextCardsID = PackedInt32Array()
+SpecialEffectsID = PackedInt32Array()
+SpecialEffectsValue = PackedInt32Array()
+SpecialEffectsLife = PackedInt32Array()
+SpritePath = "res://Cards/CardSprites/11_trucizna_szczura.png"

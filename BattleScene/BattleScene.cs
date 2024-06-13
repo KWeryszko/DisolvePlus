@@ -187,6 +187,7 @@ public partial class BattleScene : Node2D
     public void DeathsignalReceiverPlayer()
     {
         GD.Print("Player Died");
+        save.Round = 0;
         GetTree().ChangeSceneToFile("res://GameOverScene/GameOverScene.tscn");
     }
     public void DeathsignalReceiverEnemy()

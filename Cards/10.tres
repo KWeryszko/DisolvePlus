@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://1070tilvyyob"]
+
+[ext_resource type="Script" path="res://Cards/CardResource.cs" id="1_xjt1o"]
+
+[resource]
+script = ExtResource("1_xjt1o")
+ID = 10
+AttackValue = 0
+ArmourValue = 0
+HealValue = 0
+ApCost = 5
+Name = "Genialne Rozwiązanie"
+AgilityScaling = 0.0
+StrengthScaling = 1.0
+IntelligenceScaling = 2.5
+NextCardsID = PackedInt32Array()
+SpecialEffectsID = PackedInt32Array()
+SpecialEffectsValue = PackedInt32Array()
+SpecialEffectsLife = PackedInt32Array()
+SpritePath = "res://Cards/CardSprites/10_Genialne_Rozwiazanie.png"
