@@ -42,3 +42,4 @@ res://Testy/Hp_test/HpTestlabel.cs
 res://Enemies/BlueSlime/BlueSlime.tscn
 res://Enemies/RedSlime/RedSlime.tscn
 res://GameOverScene/GameOverScene.tscn
+res://BattleVictory/BattleVictory.tscn
