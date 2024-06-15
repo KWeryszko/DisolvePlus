@@ -1,2 +1,2 @@
-﻿64105
-C:/Users/Admin/Downloads/Godot_v4.2.1-stable_mono_win64/Godot_v4.2.1-stable_mono_win64.exe
+﻿65425
+C:/Users/Franc/OneDrive/Pulpit/Nowy folder/Godot_v4.2.1-stable_mono_win64/Godot_v4.2.1-stable_mono_win64.exe
