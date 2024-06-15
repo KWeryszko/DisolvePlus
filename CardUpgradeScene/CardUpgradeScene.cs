@@ -125,32 +125,27 @@ public partial class CardUpgradeScene : Node2D
         }
         if (tempCardList.Count==1) 
         {
-            tempCardList[0].SetGlobalPosition(new Vector2(380, 200));
-            tempButtonList[0].SetGlobalPosition(new Vector2(380, 200));
+            tempCardList[0].SetGlobalPosition(new Vector2(200, 100));
+            tempButtonList[0].SetGlobalPosition(new Vector2(200, 100));
         }
         else if (tempCardList.Count==2)
         {
-            tempCardList[0].SetGlobalPosition(new Vector2(305, 200));
-            tempCardList[1].SetGlobalPosition(new Vector2(455, 200));
-            tempButtonList[0].SetGlobalPosition(new Vector2(305, 200));
-            tempButtonList[1].SetGlobalPosition(new Vector2(455, 200));
+            tempCardList[0].SetGlobalPosition(new Vector2(150, 100));
+            tempCardList[1].SetGlobalPosition(new Vector2(250, 100));
+            tempButtonList[0].SetGlobalPosition(new Vector2(150, 100));
+            tempButtonList[1].SetGlobalPosition(new Vector2(250, 100));
         }
         else if(tempCardList.Count==3)
         {
-            tempCardList[0].SetGlobalPosition(new Vector2(230, 200));
-            tempCardList[1].SetGlobalPosition(new Vector2(380, 200));
-            tempCardList[2].SetGlobalPosition(new Vector2(530, 200));
-            tempButtonList[0].SetGlobalPosition(new Vector2(230, 200));
-            tempButtonList[1].SetGlobalPosition(new Vector2(380, 200));
-            tempButtonList[2].SetGlobalPosition(new Vector2(530, 200));
-        }
-        foreach(CardButton button in tempButtonList)
-        {
-            button.Flat = true;
+            tempCardList[0].SetGlobalPosition(new Vector2(100, 100));
+            tempCardList[1].SetGlobalPosition(new Vector2(200, 100));
+            tempCardList[2].SetGlobalPosition(new Vector2(300, 100));
+            tempButtonList[0].SetGlobalPosition(new Vector2(100, 100));
+            tempButtonList[1].SetGlobalPosition(new Vector2(200, 100));
+            tempButtonList[2].SetGlobalPosition(new Vector2(300, 100));
         }
         AddChild(cards[parentCardIndex]);
-        //Karta do ulepszenia
-        cards[parentCardIndex].SetGlobalPosition(new Vector2(380, 400));
+        cards[parentCardIndex].SetGlobalPosition(new Vector2(200, 300));
     }
     private void ImportCards()
     {
