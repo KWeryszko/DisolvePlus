@@ -12,6 +12,7 @@ public partial class BattleScene : Node2D
         {
             drawPile.AddCardById(card);
         }
+        drawPile.Shuffle(100);
         
 
         hand = GetChild<CardDeck>(2);
@@ -46,8 +47,10 @@ public partial class BattleScene : Node2D
         else { path = "res://Enemies/RedSlime/RedSlime.tscn";  }
         var scene = GD.Load<PackedScene>(path);
         var instance = scene.Instantiate();
+        
         AddChild(instance);
         enemy = GetChild<BaseEnemy>(9);
+        enemy.Position = new Vector2(760, 250);
         enemy.CharacterDied += DeathsignalReceiverEnemy;
 
         //AP Bar\\

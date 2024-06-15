@@ -138,7 +138,7 @@ script = ExtResource("1_5vvbk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(11, 69)
-scale = Vector2(0.411315, 0.411315)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_vevi4")
 frame = 7
 frame_progress = 0.373865

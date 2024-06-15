@@ -137,6 +137,7 @@ animations = [{
 script = ExtResource("1_ym3n2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_1y8wg")
 
 [node name="Hp2" parent="." instance=ExtResource("2_nwi6u")]
