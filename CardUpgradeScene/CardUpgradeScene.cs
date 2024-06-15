@@ -147,9 +147,11 @@ public partial class CardUpgradeScene : Node2D
         foreach(CardButton button in tempButtonList)
         {
             button.Flat = true;
+            
         }
         AddChild(cards[parentCardIndex]);
-        //Karta do ulepszenia
+        //Karta do ulepszenia na srodku
+
         cards[parentCardIndex].SetGlobalPosition(new Vector2(380, 400));
     }
     private void ImportCards()
