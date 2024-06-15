@@ -1,11 +1,14 @@
 res://BattleScene/BattleScene.tscn
-res://Cards/CardResource.cs
 res://Enemies/TestPlayer/TestPlayer.cs
 res://Cards/BaseCard.cs
 res://Enemies/TestPlayer/TestPlayer.tscn
 res://Cards/BaseCard.tscn
 res://Enemies/GreenSlime/GreenSlime.tscn
 res://Menu/Menu.tscn
+res://Enemies/BlueSlime/BlueSlime.tscn
+res://Enemies/RedSlime/RedSlime.tscn
+res://GameOverScene/GameOverScene.tscn
+res://BattleVictory/BattleVictory.tscn
 res://Armour/Armour.cs
 res://Attribute/Attribute.cs
 res://BattleScene/ApBar.cs
@@ -19,6 +22,7 @@ res://CardButton/CardButton.cs
 res://CardDeck/CardDeck.cs
 res://Cards/AP.cs
 res://Cards/ATT.cs
+res://Cards/CardResource.cs
 res://Cards/name.cs
 res://CardUpgradeScene/CardUpgradeScene.cs
 res://Effects/Attribute_Effects/Attribute_Effects.cs
@@ -39,7 +43,7 @@ res://Testy/Armour_test/ArmourTestLabel.cs
 res://Testy/Attribute_test/Label_att_test.cs
 res://Testy/CardDeck_test/CardDeck_test.cs
 res://Testy/Hp_test/HpTestlabel.cs
-res://Enemies/BlueSlime/BlueSlime.tscn
-res://Enemies/RedSlime/RedSlime.tscn
-res://GameOverScene/GameOverScene.tscn
-res://BattleVictory/BattleVictory.tscn
+res://CardUpgradeScene/CardUpgradeScene.tscn
+res://Cards/1.tres
+res://Cards/2.tres
+res://Cards/3.tres
