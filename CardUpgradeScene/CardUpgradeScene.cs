@@ -58,17 +58,9 @@ public partial class CardUpgradeScene : Node2D
 
 
         }
-        foreach (var button in buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length == 0))
-        {
-            button.Flat = false;
-            button.Disabled = true;
-        }
-        foreach (var button in buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length != 0))
-        {
-            button.Disabled = false;
-            button.Flat = true;
-        }
-
+        GreyOutButtons(buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length == 0));
+        EnableButtons(buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length != 0));
+       
         if (cards.Count > (currentPage+1) * 10) nextPageButton.Visible = true;    
         else                                    nextPageButton.Visible= false;
         
@@ -91,26 +83,29 @@ public partial class CardUpgradeScene : Node2D
                 positionBuffer[1] += 200;
             }
             buttons[i].OnButtonPressed += OnCardButtonPressed; //connecting functions, can be moved to separate method
-            buttons.FindAll(x=>)
+         
         }
 
 
         ResetPositionBuffer();
     }
-    private void GrayOutButtons(int[] index)
+    
+    private void GreyOutButtons(List<CardButton> buttons)
     {
-        foreach (int i in index)
+
+        foreach (CardButton button in buttons)
         {
-            buttons[i].Flat = false;
-            buttons[i].Disabled = true;
+
+            button.Flat = false;
+            button.Disabled = true;
         }
     }
-    private void EnableButtons(int[] index)
+    private void EnableButtons(List<CardButton> buttons)
     {
-        foreach (int i in index)
+        foreach (CardButton button in buttons)
         {   
-            buttons[i].Flat = true;
-            buttons[i].Disabled = false;
+            button.Flat = true;
+            button.Disabled = false;
         }
     }
     private void OnNextButtonPageClick()
