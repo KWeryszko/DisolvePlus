@@ -34,6 +34,7 @@ texture = ExtResource("3_1tqa3")
 
 [node name="Scroll2" type="TextureRect" parent="Background"]
 z_index = -1
+layout_mode = 0
 offset_left = -600.0
 offset_top = 123.0
 offset_right = 372.0
