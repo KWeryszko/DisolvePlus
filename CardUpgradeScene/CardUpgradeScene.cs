@@ -19,7 +19,6 @@ public partial class CardUpgradeScene : Node2D
         previousPageButton.Visible = false;
         previousPageButton.ButtonDown += OnPreviousButtonPageClick;
 
-
         ImportCards();
         currentPage = 0;
 
@@ -38,9 +37,8 @@ public partial class CardUpgradeScene : Node2D
     private void displayCards()
     {
         for (int i = 10 * currentPage; i < cards.Count && i < 10 * (currentPage + 1); i++)
-        {   
+        {
 
-            
             AddChild(cards[i]);
             cards[i].SetGlobalPosition(positionBuffer);
 
@@ -55,12 +53,18 @@ public partial class CardUpgradeScene : Node2D
                 positionBuffer[0] = 80;
                 positionBuffer[1] += 200;
             }
-
-
         }
-        GreyOutButtons(buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length == 0));
-        EnableButtons(buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length != 0));
-       
+        foreach (var button in buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length == 0))
+        {
+            button.Flat = false;
+            button.Disabled = true;
+        }
+        foreach (var button in buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length != 0))
+        {
+            button.Disabled = false;
+            button.Flat = true;
+        }
+
         if (cards.Count > (currentPage+1) * 10) nextPageButton.Visible = true;    
         else                                    nextPageButton.Visible= false;
         
@@ -83,30 +87,9 @@ public partial class CardUpgradeScene : Node2D
                 positionBuffer[1] += 200;
             }
             buttons[i].OnButtonPressed += OnCardButtonPressed; //connecting functions, can be moved to separate method
-         
         }
-
 
         ResetPositionBuffer();
-    }
-    
-    private void GreyOutButtons(List<CardButton> buttons)
-    {
-
-        foreach (CardButton button in buttons)
-        {
-
-            button.Flat = false;
-            button.Disabled = true;
-        }
-    }
-    private void EnableButtons(List<CardButton> buttons)
-    {
-        foreach (CardButton button in buttons)
-        {   
-            button.Flat = true;
-            button.Disabled = false;
-        }
     }
     private void OnNextButtonPageClick()
     {
