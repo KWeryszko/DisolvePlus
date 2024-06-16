@@ -44,4 +44,4 @@ res://Testy/Armour_test/ArmourTestLabel.cs
 res://Testy/Attribute_test/Label_att_test.cs
 res://Testy/CardDeck_test/CardDeck_test.cs
 res://Testy/Hp_test/HpTestlabel.cs
-res://Cards/2.tres
+res://CardButton/Resources/DisabledCardButton.tres
