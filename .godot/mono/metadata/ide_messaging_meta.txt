@@ -1,2 +1,7 @@
+<<<<<<< HEAD
+﻿49763
+C:/Users/Admin/Downloads/Godot_v4.2.1-stable_mono_win64/Godot_v4.2.1-stable_mono_win64.exe
+=======
 ﻿62691
 C:/Users/Franc/OneDrive/Pulpit/Nowy folder/Godot_v4.2.1-stable_mono_win64/Godot_v4.2.1-stable_mono_win64.exe
+>>>>>>> b4a9cffddcf688fa34eb1ceb3b956842f6416542
