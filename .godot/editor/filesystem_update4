@@ -45,3 +45,6 @@ res://Testy/Attribute_test/Label_att_test.cs
 res://Testy/CardDeck_test/CardDeck_test.cs
 res://Testy/Hp_test/HpTestlabel.cs
 res://Cards/2.tres
+res://CombatScene.tscn
+res://HP2/HP2.tscn
+res://CardButton/Resources/Disabled_Card_Button.tres

@@ -14,6 +14,8 @@ public partial class CardButton : Button
     public override void _Ready()
     {
         Size = new Vector2(100, 150); //sets card size
+        StyleBoxFlat ferus = GD.Load<StyleBoxFlat>("res://CardButton/Resources/Disabled_Card_Button.tres");
+        AddThemeStyleboxOverride("disabled", ferus);
     }
     public override void _Draw()
     {
