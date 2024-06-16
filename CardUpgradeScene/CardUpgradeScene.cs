@@ -19,6 +19,7 @@ public partial class CardUpgradeScene : Node2D
         previousPageButton.Visible = false;
         previousPageButton.ButtonDown += OnPreviousButtonPageClick;
 
+
         ImportCards();
         currentPage = 0;
 
@@ -37,8 +38,9 @@ public partial class CardUpgradeScene : Node2D
     private void displayCards()
     {
         for (int i = 10 * currentPage; i < cards.Count && i < 10 * (currentPage + 1); i++)
-        {
+        {   
 
+            
             AddChild(cards[i]);
             cards[i].SetGlobalPosition(positionBuffer);
 
@@ -53,6 +55,8 @@ public partial class CardUpgradeScene : Node2D
                 positionBuffer[0] = 80;
                 positionBuffer[1] += 200;
             }
+
+
         }
 
         if (cards.Count > (currentPage+1) * 10) nextPageButton.Visible = true;    
@@ -77,9 +81,27 @@ public partial class CardUpgradeScene : Node2D
                 positionBuffer[1] += 200;
             }
             buttons[i].OnButtonPressed += OnCardButtonPressed; //connecting functions, can be moved to separate method
+            buttons.FindAll(x=>)
         }
 
+
         ResetPositionBuffer();
+    }
+    private void GrayOutButtons(int[] index)
+    {
+        foreach (int i in index)
+        {
+            buttons[i].Flat = false;
+            buttons[i].Disabled = true;
+        }
+    }
+    private void EnableButtons(int[] index)
+    {
+        foreach (int i in index)
+        {   
+            buttons[i].Flat = true;
+            buttons[i].Disabled = false;
+        }
     }
     private void OnNextButtonPageClick()
     {
