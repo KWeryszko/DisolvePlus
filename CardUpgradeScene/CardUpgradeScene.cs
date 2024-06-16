@@ -58,6 +58,16 @@ public partial class CardUpgradeScene : Node2D
 
 
         }
+        foreach (var button in buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length == 0))
+        {
+            button.Flat = false;
+            button.Disabled = true;
+        }
+        foreach (var button in buttons.FindAll(button => button.GetParent<BaseCard>().Stats.NextCardsID.Length != 0))
+        {
+            button.Disabled = false;
+            button.Flat = true;
+        }
 
         if (cards.Count > (currentPage+1) * 10) nextPageButton.Visible = true;    
         else                                    nextPageButton.Visible= false;
