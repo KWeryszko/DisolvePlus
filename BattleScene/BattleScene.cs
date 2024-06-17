@@ -27,6 +27,7 @@ public partial class BattleScene : Node2D
         EB = GetChild<EnemyButton>(7);
         EB.ButtonUp += ChooseEnemy;
         EB.Visible = false;
+        
 
         //PLAYER\\
         player = GetChild<BaseEnemy>(8);
@@ -52,7 +53,7 @@ public partial class BattleScene : Node2D
         enemy = GetChild<BaseEnemy>(9);
         enemy.Position = new Vector2(760, 250);
         enemy.CharacterDied += DeathsignalReceiverEnemy;
-
+        
         //AP Bar\\
         apBar = GetChild<Control>(0).GetChild<ApBar>(1);
         apBar.MaxAPSetup(player.GetChild<Attribute>(6).getbaseAttribute());
@@ -88,6 +89,10 @@ public partial class BattleScene : Node2D
             turnEnd = false;
             turnStart = true;
         };//Waits until player is able to read text on the card played by enemy
+        if (Input.IsActionJustPressed("LeftMouseClick") && enemyDied)
+        {
+            GetTree().ChangeSceneToFile("res://BattleVictory/BattleVictory.tscn");
+        };//Waits
 
     }
     private void EnemyTurn()
@@ -197,7 +202,9 @@ public partial class BattleScene : Node2D
     {
         GD.Print("Enemy Died");
         save.Upgrade = true;
-        GetTree().ChangeSceneToFile("res://BattleVictory/BattleVictory.tscn");
+        enemyDied = true;
+        NTB.Visible = false;
+        hand.DisableButtons();
     }
 
     CardDeck drawPile, hand, discardPile;
@@ -206,7 +213,7 @@ public partial class BattleScene : Node2D
     EnemyButton EB;
     TurnCounter turnCounter;
     private BaseCard cardInUse;
-    private bool turnStart=true, enemyTurn, turnEnd=false;
+    private bool turnStart=true, enemyTurn, turnEnd=false, enemyDied=false;
     private BaseEnemy enemy, player;
     private int[] handButtonBuffer;
     private ApBar apBar;

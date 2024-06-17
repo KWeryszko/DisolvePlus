@@ -72,10 +72,8 @@ offset_bottom = 260.0
 text = "returnCard"
 
 [node name="EnemyButton" type="Button" parent="."]
-offset_left = 778.0
-offset_top = 240.0
-offset_right = 902.0
-offset_bottom = 463.0
+offset_right = 118.0
+offset_bottom = 31.0
 text = "enemy button"
 script = ExtResource("6_jl6d7")
 
