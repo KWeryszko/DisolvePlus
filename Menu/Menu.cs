@@ -5,13 +5,13 @@ public partial class Menu : Node2D
 {
     public override void _Ready()
     {
-        playButton = GetChild<Button>(1);
+        playButton = GetChild<Button>(2);
         playButton.ButtonDown += PlayButtonClicked;
 
-        ExitButton = GetChild<Button>(2);
-        ExitButton.ButtonDown += ExitButtonClicked;
+        //ExitButton = GetChild<Button>(3);
+        //ExitButton.ButtonDown += ExitButtonClicked;
 
-        title = GetChild<TextureButton>(3);
+        title = GetChild<TextureButton>(1);
         title.ButtonDown += TitleClicked;
         
     }

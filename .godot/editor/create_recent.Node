@@ -1,6 +1,6 @@
+TextureRect
 TextureButton
 Button
-TextureRect
 AnimatedSprite2D
 Node2D
 Control
