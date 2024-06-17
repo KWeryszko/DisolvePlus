@@ -6,11 +6,11 @@ public partial class BattleVictory : Node2D
     public override void _Ready()
 
     {
-        addCardButton = GetChild<Button>(1);
+        addCardButton = GetChild<TextureButton>(1);
         addCardButton.ButtonUp += UpgradeCard;
-        upgradeCardButton = GetChild<Button>(2);
+        upgradeCardButton = GetChild<TextureButton>(2);
         upgradeCardButton.ButtonUp += AddCard;
-        nextBattleButton = GetChild<Button>(3);
+        nextBattleButton = GetChild<TextureButton>(3);
         nextBattleButton.ButtonUp += NextBattle;
         if (!save.Upgrade)
         {
@@ -44,6 +44,6 @@ public partial class BattleVictory : Node2D
     {
         GetTree().ChangeSceneToFile("res://BattleScene/BattleScene.tscn");
     }
-    private Button addCardButton, upgradeCardButton, nextBattleButton;
+    private TextureButton addCardButton, upgradeCardButton, nextBattleButton;
     private SaveFileResource save = GD.Load<SaveFileResource>("res://Saves/save1.tres");
 }
